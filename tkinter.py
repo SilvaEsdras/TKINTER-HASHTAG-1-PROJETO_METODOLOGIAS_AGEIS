@@ -1,20 +1,29 @@
-from datetime import datetime
+import tkinter
 
-def guardar_registros():
-    registros = {}
-    for c in range(3):
-        codigo = int(input('DIGITE O CÓDIGO DO PRODUTO: '))
-        nome = str(input('DIGITE O NOME DA OPERAÇÃO: '))
-        quantidade = int(input('DIGITE A QUANTIDADE: '))
-        data = input('DIGITE A DATA: ')
-        date = datetime.strptime(data, '%d/%m/%Y').date()
-        venda_compra = str(input("DIGITE 'V' PARA VENDAS E 'S' PARA COMPRAS "))
-        registrados = (nome, quantidade, data, venda_compra)
-        registros[codigo] = registrados
-    return registros
+registros = {}
+def guardar_registros(registros, codigo, tupla):
+      for c in range(2):
+        registros.update({codigo:tupla})
 
-ch = guardar_registros()
-print(ch)
+def main():
+  for c in range(2):
+    codigo = int(input('DIGITE O CÓDIGO DO PRODUTO: '))
+    nome = str(input('DIGITE O NOME DA OPERAÇÃO: ').upper())
+    quantidade = int(input('DIGITE A QUANTIDADE: '))
+    data = input('DIGITE A DATA: ')
+    date = datetime.strptime(data, '%d/%m/%Y').date()
+    venda_compra = str(input("DIGITE 'V' PARA VENDAS E 'C' PARA COMPRAS ").upper())
+    registrados = (nome, quantidade, data, venda_compra)
+    ch = guardar_registros(registros, codigo, registrados)
+    print(registros)
+
+if __name__=='__main__':
+  main()
+
+#INTERFACE COM TKINTER
+
+janela = tkinter.Tk()
 
 
 
+janela.mainloop()
