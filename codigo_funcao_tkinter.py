@@ -18,5 +18,6 @@ def main():
         ch = guardar_registros(registros, codigo, registrados)
         print(ch)
     
-
+if __name__=='__main__':
+    main()
     
