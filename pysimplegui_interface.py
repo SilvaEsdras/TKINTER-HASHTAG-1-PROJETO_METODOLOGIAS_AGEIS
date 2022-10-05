@@ -34,6 +34,10 @@ janela.title('Bolsa de valores')
 input_data = tkinter.Label(janela, text="DATA")
 input_data.grid(column=0, row=0, padx=10, pady=10)
 
+data = tkinter.Entry(janela)
+data.grid(column=0, row=1, padx = 10, pady = 10)
+data_campo = data.get()
+
 input_data = tkinter.Label(janela, text="CODIGO")
 input_data.grid(column=0, row=1, padx=10, pady=10)
 
