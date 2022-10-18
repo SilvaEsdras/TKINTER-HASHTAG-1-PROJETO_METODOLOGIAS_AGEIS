@@ -12,15 +12,15 @@ def main():
         nome = str(input('DIGITE O NOME DA OPERAÇÃO: ').upper())
         quantidade = int(input('DIGITE A QUANTIDADE: '))
         data = input('DIGITE A DATA: ')
-        venda_compra = str(input("DIGITE 'V' PARA VENDAS E 'C' PARA COMPRAS ").upper())
-        corretagem = str(input('CORRETAGEM'))
-        taxa_b3 = str(input('TAXA B3'))
-        valor_operacao = float(input())
+        venda_compra = str(input("DIGITE 'V' PARA VENDAS E 'C' PARA COMPRAS: ").upper())
+        corretagem = str(input('CORRETAGEM: '))
+        taxa_b3 = str(input('TAXA B3: '))
+        valor_operacao = float(input('Valor da operação: '))
         registrados = (nome, quantidade, data, venda_compra,taxa_b3, valor_operacao)
         ch = guardar_registros(registros, codigo, registrados)
         print(registros)
     
-if __name__=='__main__':
+if _name=='main_':
     main()
 
 
@@ -62,6 +62,9 @@ input_data.grid(column=0, row=7, padx=10, pady=10)
 input_data = tkinter.Label(janela, text="VALOR DA OPERAÇÃO")
 input_data.grid(column=0, row=8, padx=10, pady=10)
 
+def historico():
+    tela = tkinter.Tk()
+    tela.title("Historico")
 
 botao = tkinter.Button(janela, text="Ver histórico")
 botao.grid(column=0, row=9, padx=10, pady=10)
